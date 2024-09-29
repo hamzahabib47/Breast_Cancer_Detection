@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Breast Cancer Detection</h1>
+            <p>Enter the values of the tumor.</p>
+            <form action="{{ url_for('predict') }}" method="post">
+                <div class="input-group">
+                    <input type="text" name="mean_radius" placeholder="mean radius" required />
+                    <input type="text" name="mean_texture" placeholder="mean texture" required />
+                    <input type="text" name="mean_perimeter" placeholder="mean perimeter" required />
+                    <input type="text" name="mean_area" placeholder="mean area" required />
+                    <input type="text" name="mean_smoothness" placeholder="mean smoothness" required />
+                    <input type="text" name="mean_compactness" placeholder="mean compactness" required />
+                    <input type="text" name="mean_concavity" placeholder="mean concavity" required />
+                    <input type="text" name="mean_concave_points" placeholder="mean concave points" required />
+                    <input type="text" name="mean_symmetry" placeholder="mean symmetry" required />
+                    <input type="text" name="mean_fractal_dimension" placeholder="mean fractal dimension" required />
+                    <input type="text" name="radius_error" placeholder="radius error" required />
+                    <input type="text" name="texture_error" placeholder="texture error" required />
+                    <input type="text" name="perimeter_error" placeholder="perimeter error" required />
+                    <input type="text" name="area_error" placeholder="area error" required />
+                    <input type="text" name="smoothness_error" placeholder="smoothness error" required />
+                    <input type="text" name="compactness_error" placeholder="compactness error" required />
+                    <input type="text" name="concavity_error" placeholder="concavity error" required />
+                    <input type="text" name="concave_points_error" placeholder="concave points error" required />
+                    <input type="text" name="symmetry_error" placeholder="symmetry error" required />
+                    <input type="text" name="fractal_dimension_error" placeholder="fractal dimension error" required />
+                    <input type="text" name="worst_radius" placeholder="worst radius" required />
+                    <input type="text" name="worst_texture" placeholder="worst texture" required />
+                    <input type="text" name="worst_perimeter" placeholder="worst perimeter" required />
+                    <input type="text" name="worst_area" placeholder="worst area" required />
+                    <input type="text" name="worst_smoothness" placeholder="worst smoothness" required />
+                    <input type="text" name="worst_compactness" placeholder="worst compactness" required />
+                    <input type="text" name="worst_concavity" placeholder="worst concavity" required />
+                    <input type="text" name="worst_concave_points" placeholder="worst concave points" required />
+                    <input type="text" name="worst_symmetry" placeholder="worst symmetry" required />
+                    <input type="text" name="worst_fractal_dimension" placeholder="worst fractal dimension" required />
+                </div>
+                <button type="submit" class="btn">Predict Cancer</button>
+            </form>
+            <div class="prediction-output">
+                <h2>{{ prediction_text }}</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
